@@ -4,7 +4,7 @@ package com.spring.app.personnel.domain;
 * @FileName  : WorkhistoryVO.java 
 * @Project   : TempFinal 
 * @Date      : 2023. 12. 20 
-* @작성자      : db228 
+* @작성자      : 윤예인 (eni1221) 
 * @변경이력    : 
 * @프로그램설명    : 
 */
