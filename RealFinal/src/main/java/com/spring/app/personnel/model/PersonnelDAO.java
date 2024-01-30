@@ -18,7 +18,7 @@ public interface PersonnelDAO {
 	/** 
 	* @Method Name  : sysdate_get 
 	* @작성일   : 2023. 12. 25 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 현재 날짜 가져오기
 	* @return 
@@ -30,7 +30,7 @@ public interface PersonnelDAO {
 	/** 
 	* @Method Name  : year_hour 
 	* @작성일   : 2023. 12. 25 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 올해 총 근무 시간
 	* @param paraMapYear
@@ -41,7 +41,7 @@ public interface PersonnelDAO {
 	/** 
 	* @Method Name  : workhistory_print 
 	* @작성일   : 2023. 12. 28 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 현재 근무현황 출력
 	* @param paraMap
@@ -52,7 +52,7 @@ public interface PersonnelDAO {
 	/** 
 	* @Method Name  : workhistory_insert 
 	* @작성일   : 2023. 12. 29 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 근무현황 추가
 	* @param paraMap
@@ -63,7 +63,7 @@ public interface PersonnelDAO {
 	/** 
 	* @Method Name  : personnel_search_name 
 	* @작성일   : 2024. 1. 1 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 사원이름검색
 	* @param empName
@@ -74,7 +74,7 @@ public interface PersonnelDAO {
 	/** 
 	* @Method Name  : personnel_selct_empid 
 	* @작성일   : 2024. 1. 2 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 사원아이디검색
 	* @param empid 
@@ -85,7 +85,7 @@ public interface PersonnelDAO {
 	/** 
 	* @Method Name  : vaction_cnt 
 	* @작성일   : 2024. 1. 4 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 휴가잔여일
 	* @param empid
@@ -96,7 +96,7 @@ public interface PersonnelDAO {
 	/** 
 	* @Method Name  : va_approval_insert 
 	* @작성일   : 2024. 1. 5 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 휴가신청 전자
 	* @param empid
@@ -107,7 +107,7 @@ public interface PersonnelDAO {
 	/** 
 	* @Method Name  : va_dayoff_insert 
 	* @작성일   : 2024. 1. 5 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 휴가신청
 	* @param paraMap
@@ -118,7 +118,7 @@ public interface PersonnelDAO {
 	/** 
 	* @Method Name  : procedure_insert 
 	* @작성일   : 2024. 1. 5 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 전자 기안순서
 	* @param paraMaps
@@ -129,7 +129,7 @@ public interface PersonnelDAO {
 	/** 
 	* @Method Name  : tardy_cnt 
 	* @작성일   : 2024. 1. 9 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 지각
 	* @param empid
@@ -140,7 +140,7 @@ public interface PersonnelDAO {
 	/** 
 	* @Method Name  : early_work_cnt 
 	* @작성일   : 2024. 1. 9 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 조기퇴근
 	* @param empid
@@ -151,7 +151,7 @@ public interface PersonnelDAO {
 	/** 
 	* @Method Name  : not_leave_work 
 	* @작성일   : 2024. 1. 9 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 퇴근미체크
 	* @param empid
@@ -162,7 +162,7 @@ public interface PersonnelDAO {
 	/** 
 	* @Method Name  : workday_cnt 
 	* @작성일   : 2024. 1. 9 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 근무일
 	* @param empid
@@ -173,7 +173,7 @@ public interface PersonnelDAO {
 	/** 
 	* @Method Name  : absenteeism 
 	* @작성일   : 2024. 1. 9 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 결근
 	* @param empid
@@ -184,7 +184,7 @@ public interface PersonnelDAO {
 	/** 
 	* @Method Name  : mowork_approval_insert 
 	* @작성일   : 2024. 1. 9 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 수정 전자 
 	* @param empid
@@ -195,7 +195,7 @@ public interface PersonnelDAO {
 	/** 
 	* @Method Name  : work_modify_add_insert 
 	* @작성일   : 2024. 1. 9 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 근무수정신청 추가
 	* @param paraMaps
@@ -206,7 +206,7 @@ public interface PersonnelDAO {
 	/** 
 	* @Method Name  : work_modify_del_insert 
 	* @작성일   : 2024. 1. 9 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 근무수정신청 삭제
 	* @param paraMaps
@@ -217,7 +217,7 @@ public interface PersonnelDAO {
 	/** 
 	* @Method Name  : work_modify_edit_insert 
 	* @작성일   : 2024. 1. 9 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 근무수정신청 수정
 	* @param paraMaps
@@ -228,7 +228,7 @@ public interface PersonnelDAO {
 	/** 
 	* @Method Name  : avg_hour 
 	* @작성일   : 2024. 1. 10 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 평균시간
 	* @param paraMapYear
