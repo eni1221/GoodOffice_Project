@@ -48,7 +48,7 @@ import com.spring.app.personnel.service.PersonnelService;
  * 
  * @Project   : TempFinal 
  * @Date      : 2023. 12. 10 
- * @작성자      : db228, 신예진 (yejjinny)
+ * @작성자      : 윤예인 (eni1221), 신예진 (yejjinny)
  * @변경이력 : 
  * @프로그램설명 : 
  */
@@ -74,7 +74,7 @@ public class PersonnelController {
 	/** 
 	* @Method Name  : work_modify 
 	* @작성일   : 2024. 1. 7 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 근무수정하기
 	* @param request
@@ -97,7 +97,7 @@ public class PersonnelController {
 	/** 
 	* @Method Name  : workstatus_day_select 
 	* @작성일   : 2024. 1. 7 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 근무내역 조회
 	* @param request
@@ -181,7 +181,7 @@ public class PersonnelController {
 	 * 
 	 * @Method Name  : personal_index 
 	 * @작성일   : 2023. 12. 10 
-	 * @작성자   : db228  @변경이력  :
+	 * @작성자   : 윤예인 (eni1221)  @변경이력  :
 	 * @Method 설명 :  인사 인덱스
 	 * @param request
 	 * @param response @return 
@@ -268,7 +268,7 @@ public class PersonnelController {
 	 * 
 	 * @Method Name  : workstatus_insert
 	 * @작성일   : 2023. 12. 27 
-	 * @작성자   : db228  @변경이력  : 
+	 * @작성자   : 윤예인 (eni1221)  @변경이력  : 
 	 * @Method 설명 : 근무 내역 추가
 	 * @param request
 	 * @param response
@@ -307,7 +307,7 @@ public class PersonnelController {
 	 * 
 	 * @Method Name  : workstatus_print 
 	 * @작성일   : 2023. 12. 27 
-	 * @작성자   : db228  @변경이력  : 
+	 * @작성자   : 윤예인 (eni1221)  @변경이력  : 
 	 * @Method 설명 : 근무내역 출력
 	 * @param request
 	 * @param response
@@ -390,7 +390,7 @@ public class PersonnelController {
 	/** 
 	* @Method Name  : personal_vaction_application 
 	* @작성일   : 2024. 1. 7 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 휴가일수
 	* @param request
@@ -417,7 +417,7 @@ public class PersonnelController {
 	/** 
 	* @Method Name  : personal_vaction_insert 
 	* @작성일   : 2024. 1. 7 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 휴가 기안 등록
 	* @param request
@@ -544,7 +544,7 @@ public class PersonnelController {
 	/** 
 	* @Method Name  : personal_workmodi_insert 
 	* @작성일   : 2024. 1. 7 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 근무수정 기안 등록
 	* @param request
@@ -786,7 +786,7 @@ public class PersonnelController {
 	 * 
 	 * @Method Name  : personnel_search_name 
 	 * @작성일   : 2023. 12. 31 
-	 * @작성자   : db228  @변경이력  : 
+	 * @작성자   : 윤예인 (eni1221)  @변경이력  : 
 	 * @Method 설명 : 사원이름검색
 	 * @param request
 	 * @param response
@@ -817,7 +817,7 @@ public class PersonnelController {
 	/** 
 	* @Method Name  : personnel_selct_empid 
 	* @작성일   : 2024. 1. 7 
-	* @작성자   : db228 
+	* @작성자   : 윤예인 (eni1221) 
 	* @변경이력  : 
 	* @Method 설명 : 사원아이디 검색
 	* @param request
