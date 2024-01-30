@@ -520,7 +520,7 @@
 		
 		
 		<choose>
-		   <when test='formId == 101 or formId == 102 or formId == 104 or formId == 109'>
+		   <when test='formId == #{empId} or formId == 102 or formId == 104 or formId == 109'>
 		      reason as content,
 		   </when>
 		   <when test='formId == 103'>
@@ -547,7 +547,7 @@
 		join tbl_security s on a.fk_securityid = s.securityid
 		
 		<choose>
-		   <when test='formId == 101 or formId == 102'>
+		   <when test='formId == #{empId} or formId == 102'>
 		      left join tbl_workApplication wa on a.approvalid = wa.fk_approvalid
 		   </when>
 		   <when test='formId == 103'>
@@ -1918,15 +1918,33 @@
 	            where
 	            apd.fk_approvalId not in 
 	            (
-	                select
-	                apd.fk_approvalId
-	                from tbl_approvalProcedure apd
-	                join (select fk_approvalId, sequence, status, procedureType from tbl_approvalProcedure where fk_empId = #{empId}) apd2 on apd.fk_approvalId = apd2.fk_approvalId
-	                where 
-	                <![CDATA[ apd.sequence < apd2.sequence ]]>
-	                and apd.status != 2 and (apd.procedureType != 5 and apd.procedureType != 6 and apd.procedureType != 7)
-	                and apd2.status = 1 and (apd2.procedureType != 5 and apd2.procedureType != 6 and apd2.procedureType != 7)
-	                group by apd.fk_approvalId
+	                select 
+                    fk_approvalId
+                    from
+                    (
+	                    (
+	                        select
+	                        apd.fk_approvalId
+	                        from tbl_approvalProcedure apd
+	                        join (select fk_approvalId, sequence, status, procedureType from tbl_approvalProcedure where fk_empId = #{empId}) apd2 on apd.fk_approvalId = apd2.fk_approvalId
+	                        where 
+	                        <![CDATA[ apd.sequence < apd2.sequence ]]>
+	                        and apd.status != 2 and (apd.procedureType != 5 and apd.procedureType != 6 and apd.procedureType != 7)
+	                        and apd2.status = 1 and (apd2.procedureType != 5 and apd2.procedureType != 6 and apd2.procedureType != 7)
+	                        group by apd.fk_approvalId
+	                    )
+	                    union
+	                    (
+	                        select
+	                        apd.fk_approvalId
+	                        from tbl_approvalProcedure apd
+	                        join (select fk_approvalId, sequence, status, procedureType from tbl_approvalProcedure where fk_empId = #{empId}) apd2 on apd.fk_approvalId = apd2.fk_approvalId
+	                        where 
+	                        apd.status = 3  and (apd.procedureType != 5 and apd.procedureType != 6 and apd.procedureType != 7)
+	                        and apd2.status = 1 and (apd2.procedureType != 5 and apd2.procedureType != 6 and apd2.procedureType != 7)
+	                        group by apd.fk_approvalId
+	                    )
+                    )
 	            )
 	            and apd2.status = 1 and (apd2.procedureType != 5 and apd2.procedureType != 6 and apd2.procedureType != 7)
 	            group by apd.fk_approvalId
@@ -2383,15 +2401,33 @@
 			            where
 			            apd.fk_approvalId not in 
 			            (
-			                select
-			                apd.fk_approvalId
-			                from tbl_approvalProcedure apd
-			                join (select fk_approvalId, sequence, status, procedureType from tbl_approvalProcedure where fk_empId = #{empId}) apd2 on apd.fk_approvalId = apd2.fk_approvalId
-			                where 
-			                <![CDATA[ apd.sequence < apd2.sequence ]]>
-			                and apd.status != 2 and (apd.procedureType != 5 and apd.procedureType != 6 and apd.procedureType != 7)
-			                and apd2.status = 1 and (apd2.procedureType != 5 and apd2.procedureType != 6 and apd2.procedureType != 7)
-			                group by apd.fk_approvalId
+			                select 
+		                    fk_approvalId
+		                    from
+		                    (
+			                    (
+			                        select
+			                        apd.fk_approvalId
+			                        from tbl_approvalProcedure apd
+			                        join (select fk_approvalId, sequence, status, procedureType from tbl_approvalProcedure where fk_empId = #{empId}) apd2 on apd.fk_approvalId = apd2.fk_approvalId
+			                        where 
+			                        <![CDATA[ apd.sequence < apd2.sequence ]]>
+			                        and apd.status != 2 and (apd.procedureType != 5 and apd.procedureType != 6 and apd.procedureType != 7)
+			                        and apd2.status = 1 and (apd2.procedureType != 5 and apd2.procedureType != 6 and apd2.procedureType != 7)
+			                        group by apd.fk_approvalId
+			                    )
+			                    union
+			                    (
+			                        select
+			                        apd.fk_approvalId
+			                        from tbl_approvalProcedure apd
+			                        join (select fk_approvalId, sequence, status, procedureType from tbl_approvalProcedure where fk_empId = #{empId}) apd2 on apd.fk_approvalId = apd2.fk_approvalId
+			                        where 
+			                        apd.status = 3  and (apd.procedureType != 5 and apd.procedureType != 6 and apd.procedureType != 7)
+			                        and apd2.status = 1 and (apd2.procedureType != 5 and apd2.procedureType != 6 and apd2.procedureType != 7)
+			                        group by apd.fk_approvalId
+			                    )
+		                    )
 			            )
 			            and apd2.status = 1 and (apd2.procedureType != 5 and apd2.procedureType != 6 and apd2.procedureType != 7)
 			            group by apd.fk_approvalId
@@ -2842,15 +2878,33 @@
             where
             apd.fk_approvalId not in 
             (
-                select
-                apd.fk_approvalId
-                from tbl_approvalProcedure apd
-                join (select fk_approvalId, sequence, status, procedureType from tbl_approvalProcedure where fk_empId = #{empId}) apd2 on apd.fk_approvalId = apd2.fk_approvalId
-                where 
-                <![CDATA[ apd.sequence < apd2.sequence ]]>
-                and apd.status != 2 and (apd.procedureType != 5 and apd.procedureType != 6 and apd.procedureType != 7)
-                and apd2.status = 1 and (apd2.procedureType != 5 and apd2.procedureType != 6 and apd2.procedureType != 7)
-                group by apd.fk_approvalId
+               select 
+               fk_approvalId
+               from
+               (
+                (
+                    select
+                    apd.fk_approvalId
+                    from tbl_approvalProcedure apd
+                    join (select fk_approvalId, sequence, status, procedureType from tbl_approvalProcedure where fk_empId = #{empId}) apd2 on apd.fk_approvalId = apd2.fk_approvalId
+                    where 
+                    <![CDATA[ apd.sequence < apd2.sequence ]]>
+                    and apd.status != 2 and (apd.procedureType != 5 and apd.procedureType != 6 and apd.procedureType != 7)
+                    and apd2.status = 1 and (apd2.procedureType != 5 and apd2.procedureType != 6 and apd2.procedureType != 7)
+                    group by apd.fk_approvalId
+                )
+                union
+                (
+                    select
+                    apd.fk_approvalId
+                    from tbl_approvalProcedure apd
+                    join (select fk_approvalId, sequence, status, procedureType from tbl_approvalProcedure where fk_empId = #{empId}) apd2 on apd.fk_approvalId = apd2.fk_approvalId
+                    where 
+                    apd.status = 3  and (apd.procedureType != 5 and apd.procedureType != 6 and apd.procedureType != 7)
+                    and apd2.status = 1 and (apd2.procedureType != 5 and apd2.procedureType != 6 and apd2.procedureType != 7)
+                    group by apd.fk_approvalId
+                )
+               )
             )
             and apd2.status = 1 and (apd2.procedureType != 5 and apd2.procedureType != 6 and apd2.procedureType != 7)
             group by apd.fk_approvalId
@@ -3285,15 +3339,33 @@
 		            where
 		            apd.fk_approvalId not in 
 		            (
-		                select
-		                apd.fk_approvalId
-		                from tbl_approvalProcedure apd
-		                join (select fk_approvalId, sequence, status, procedureType from tbl_approvalProcedure where fk_empId = #{empId}) apd2 on apd.fk_approvalId = apd2.fk_approvalId
-		                where 
-		                <![CDATA[ apd.sequence < apd2.sequence ]]>
-		                and apd.status != 2 and (apd.procedureType != 5 and apd.procedureType != 6 and apd.procedureType != 7)
-		                and apd2.status = 1 and (apd2.procedureType != 5 and apd2.procedureType != 6 and apd2.procedureType != 7)
-		                group by apd.fk_approvalId
+		                select 
+	                    fk_approvalId
+	                    from
+	                    (
+		                    (
+		                        select
+		                        apd.fk_approvalId
+		                        from tbl_approvalProcedure apd
+		                        join (select fk_approvalId, sequence, status, procedureType from tbl_approvalProcedure where fk_empId = #{empId}) apd2 on apd.fk_approvalId = apd2.fk_approvalId
+		                        where 
+		                        <![CDATA[ apd.sequence < apd2.sequence ]]>
+		                        and apd.status != 2 and (apd.procedureType != 5 and apd.procedureType != 6 and apd.procedureType != 7)
+		                        and apd2.status = 1 and (apd2.procedureType != 5 and apd2.procedureType != 6 and apd2.procedureType != 7)
+		                        group by apd.fk_approvalId
+		                    )
+		                    union
+		                    (
+		                        select
+		                        apd.fk_approvalId
+		                        from tbl_approvalProcedure apd
+		                        join (select fk_approvalId, sequence, status, procedureType from tbl_approvalProcedure where fk_empId = #{empId}) apd2 on apd.fk_approvalId = apd2.fk_approvalId
+		                        where 
+		                        apd.status = 3  and (apd.procedureType != 5 and apd.procedureType != 6 and apd.procedureType != 7)
+		                        and apd2.status = 1 and (apd2.procedureType != 5 and apd2.procedureType != 6 and apd2.procedureType != 7)
+		                        group by apd.fk_approvalId
+		                    )
+	                    )
 		            )
 		            and apd2.status = 1 and (apd2.procedureType != 5 and apd2.procedureType != 6 and apd2.procedureType != 7)
 		            group by apd.fk_approvalId
@@ -3321,7 +3393,6 @@
 			)
 		
 		)
-		
         
 	</select>
 	
@@ -4861,7 +4932,7 @@
 	
 	
 	<!-- 전자결재_문서함_참조 총 갯수  -->
-	<select id="getTotalCountApprovalReadBox" parameterType="HashMap"
+	<select id="getTotalCountApprovalReferBox" parameterType="HashMap"
 		resultType="int">
 		
 		select
@@ -4952,7 +5023,7 @@
 	</select>
 	
 	<!-- 전자결재_문서함_수신, 수신참조 총 갯수  -->
-	<select id="getTotalCountApprovalReferBox" parameterType="HashMap"
+	<select id="getTotalCountApprovalReadBox" parameterType="HashMap"
 		resultType="int">
 		
 		select
