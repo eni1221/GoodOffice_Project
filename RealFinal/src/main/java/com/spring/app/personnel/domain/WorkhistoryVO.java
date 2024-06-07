@@ -12,13 +12,13 @@ public class WorkhistoryVO {
 
 	
 	/**
-	 * 근무내역id
+	 * 근무내역 id
 	 */
 	private Long workhistoryid; 
 	
 	
 	/**
-	 * 사원id
+	 * 사원 id
 	 */
 	private Long fk_empid; 
 	
