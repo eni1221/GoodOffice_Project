@@ -422,22 +422,11 @@ public class PersonnelController {
 	* @Method 설명 : 휴가 기안 등록
 	* @param request
 	* @param response
-	* @param datepi
-	* @param empidList
-	* @param empnameList
-	* @param reason
-	* @param vtype
-	* @param empidListh
-	* @param empnameListh
-	* @param empidListRef
-	* @param empnameListRef
 	* @return 
 	*/
 	@ResponseBody
 	@PostMapping("/personnel/vaction_insert.gw")
-	public String personal_vaction_insert(HttpServletRequest request, HttpServletResponse response, ModelAndView mav, String datepi,
-			String empidList, String empnameList, String reason, String vtype, String empidListh, String empnameListh,
-			String empidListRef, String empnameListRef) {
+	public String personal_vaction_insert(HttpServletRequest request, HttpServletResponse response, ModelAndView mav) {
  
 
 		 
@@ -550,29 +539,11 @@ public class PersonnelController {
 	* @param request
 	* @param response
 	* @param mav
-	* @param datepi
-	* @param empidList
-	* @param empnameList
-	* @param reason
-	* @param empidListh
-	* @param empnameListh
-	* @param empidListRef
-	* @param empnameListRef
-	* @param deleteidval
-	* @param addtypeval
-	* @param addhourval
-	* @param addminval
-	* @param idval
-	* @param editvalhourval
-	* @param editvalminval
 	* @return 
 	*/
 	@ResponseBody
 	@PostMapping("/personnel/workmodi_insert.gw")
-	public String personal_workmodi_insert(HttpServletRequest request, HttpServletResponse response, ModelAndView mav,String datepi,
-			String empidList, String empnameList, String reason , String empidListh, String empnameListh,
-			String empidListRef, String empnameListRef, String deleteidval, String addtypeval,
-			String addhourval, String addminval, String idval, String editvalhourval, String editvalminval) {
+	public String personal_workmodi_insert(HttpServletRequest request, HttpServletResponse response, ModelAndView mav ) {
  
  
 		HttpSession session = request.getSession();
