@@ -74,7 +74,7 @@ public class PersonnelController {
 	/** 
 	* @Method Name  : work_modify 
 	* @작성일   : 2024. 1. 7 
-	* @작성자   : 윤예인 (eni1221) 
+	* @작성자   : 윤예인 (eni1221)
 	* @변경이력  : 
 	* @Method 설명 : 근무수정하기
 	* @param request
